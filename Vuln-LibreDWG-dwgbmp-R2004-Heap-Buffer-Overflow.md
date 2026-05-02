@@ -30,7 +30,7 @@ if (info->compressed == 2 || bytes_left < 0
      || offset + size > dat->size)
 ```
 
-【此处插入一张补丁截图，内容是修复提交 `8f03865f37f5d4ffd616fef802acc980be54d300` 中 `src/decode.c` 新增边界检查的 diff】
+![image](https://github.com/r1ck9-2q/cve_summit/blob/main/images/libredwg1.png)
 
 ## Steps to Reproduce
 
@@ -73,7 +73,7 @@ get_bmp .../programs/dwgbmp.c:122
 main .../programs/dwgbmp.c:342
 ```
 
-【此处插入一张本地复现终端截图，内容是 vulnerable commit 运行 `dwgbmp poc.dwg` 后的 ASan 崩溃输出】
+![image](https://github.com/r1ck9-2q/cve_summit/blob/main/images/libredwg2.png)
 
 Optional public evidence:
 
@@ -81,7 +81,7 @@ The public issue for this bug is:
 
 - https://github.com/LibreDWG/libredwg/issues/1248
 
-【此处插入一张 GitHub issue #1248 截图，建议包含标题 `dwgbmp: Heap-buffer-overflow in bit_read_RC at bits.c:281` 和崩溃摘要】
+![image](https://github.com/r1ck9-2q/cve_summit/blob/main/images/libredwg4.png)
 
 ## Impact
 
