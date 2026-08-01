@@ -22,7 +22,7 @@ GPAC does not validate that the `SFURL` pointer array inside an `MFURL` field is
 
 This issue may be an incomplete fix for a prior commit: https://github.com/gpac/gpac/commit/3e535640b48ed3218e74929cbf3e42250fce3ddf
 
-![image](https://github.com/r1ck9-2q/cve_summit/blob/main/images/gpac_3814_3.png)
+![image](images/gpac_3814_3.png)
 
 ## Steps to Reproduce
 
@@ -66,7 +66,7 @@ scenegraph/vrml_tools.c:916:3: runtime error: load of null pointer of type 'stru
     #15 0x564522edb354 in _start (/tmp/gpac-src/bin/gcc/MP4Box+0xb0354) (BuildId: dd3c096f4e71056c7de1795d517fe82efe55c0e9)
 ```
 
-![image](https://github.com/r1ck9-2q/cve_summit/blob/main/images/gpac_3814_1.png)
+![image](images/gpac_3814_1.png)
 
 
 
@@ -74,7 +74,7 @@ The public issue for this bug is:
 
 - https://github.com/gpac/gpac/issues/3814
 
-![image](https://github.com/r1ck9-2q/cve_summit/blob/main/images/gpac_3814_2.png)
+![image](images/gpac_3814_2.png)
 
 ## Impact
 
