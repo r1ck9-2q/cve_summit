@@ -23,7 +23,6 @@ GPAC does not validate the parent node pointer before passing it to `gf_node_lis
 
 This issue is different from https://github.com/gpac/gpac/issues/3811.
 
-![image](images/gpac_3815_root_cause.png)
 
 ## Steps to Reproduce
 
