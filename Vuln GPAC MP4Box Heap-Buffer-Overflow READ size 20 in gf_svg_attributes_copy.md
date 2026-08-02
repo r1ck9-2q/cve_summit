@@ -69,7 +69,9 @@ SUMMARY: AddressSanitizer: heap-buffer-overflow scenegraph/svg_attributes.c:6240
 ==1506==ABORTING
 ```
 
-![image](images/gpac_3819_crash.png)
+![image](images/gpac_3819-1_crash.png)
+
+![image](images/gpac_3819-2_crash.png)
 
 The public issue for this bug is:
 
