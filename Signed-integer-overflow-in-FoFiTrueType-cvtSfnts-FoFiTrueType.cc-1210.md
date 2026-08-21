@@ -84,7 +84,7 @@ SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior /home/ricky_1208/poppler
 ```
 
 
-![GitLab work item #1762 overview](images/gitlab_workitem_1762.png)
+![GitLab work item #1762 overview](images/gitlab_cover_1762.png)
 
 ![UBSan crash output for bug 1762](images/ubsan_crash_1762.png)
 
