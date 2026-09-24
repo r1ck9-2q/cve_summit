@@ -91,7 +91,7 @@ Three unchecked steps chain the safetensors header to the filesystem:
    (SHA-256 `29056f2f…` / `e259d0cd…`, see `poc/SHA256SUMS.txt`; only the tensor
    payload bytes differ, the attack-carrying tensor names are identical).
 
-   ![Screenshot 1 — crafted bundle header](screenshots/01-poc-header.png)
+   ![Screenshot 1 — crafted bundle header](images/lycoris-bundle-tensor-name-write-01-poc-header.png)
    Raw safetensors header dump of the malicious bundle: the two
    `bundle_emb./out/canary/lycoris_e2.*` tensor names (highlighted) carry the
    traversal payload, plus SHA-256 of both samples.
@@ -107,7 +107,7 @@ Three unchecked steps chain the safetensors header to the filesystem:
        --from_bundle
    ```
 
-   ![Screenshot 2 — CLI run](screenshots/02-cli-run.png)
+   ![Screenshot 2 — CLI run](images/lycoris-bundle-tensor-name-write-02-cli-run.png)
    The official pinned CLI unpacks the malicious bundle and exits cleanly
    (`Unpacking ../poc_malicious.safetensors`, exit 0) — no error, no warning.
 
@@ -115,7 +115,7 @@ Three unchecked steps chain the safetensors header to the filesystem:
    user-specified `--dst_dir /tmp/lht_mal` — because `os.path.join()` dropped the
    destination when the embedding-name segment is absolute.
 
-   ![Screenshot 3 — file outside dst_dir](screenshots/03-outside-dst.png)
+   ![Screenshot 3 — file outside dst_dir](images/lycoris-bundle-tensor-name-write-03-outside-dst.png)
    Listing proving `/out/canary/lycoris_e2.pt` (1981 bytes) exists outside
    `--dst_dir`, while `/tmp/lht_mal` contains only the unpacked LoRA.
 
@@ -125,7 +125,7 @@ Three unchecked steps chain the safetensors header to the filesystem:
    writes only into `--dst_dir`, confirming the tensor name is the sole
    differentiator.
 
-   ![Screenshot 4 — negative control](screenshots/04-negative-control.png)
+   ![Screenshot 4 — negative control](images/lycoris-bundle-tensor-name-write-04-negative-control.png)
    Negative-control run: the benign bundle produced only `lycoris_e2_clean.pt`
    inside its `--dst_dir`, and `/out` remains empty.
 
@@ -229,15 +229,4 @@ ready-to-run exploit beyond the minimum reproduction information, and no sensiti
 infrastructure details. Do not disclose it publicly before the maintainer has had a
 reasonable window to fix the issue.
 
-## Screenshot Checklist
-
-All four screenshots were captured on 2026-09-24 from a real reproduction run
-(WSL2 Ubuntu 24.04, pinned source tree `poc/LyCORIS-4a6a3338`, transcripts in
-`poc/transcripts/`) and are embedded above.
-
-| ID | File | Shows |
-|---|---|---|
-| Screenshot 1 | `screenshots/01-poc-header.png` | Crafted bundle's raw header with the two attack tensor names highlighted, SHA-256 of both samples |
-| Screenshot 2 | `screenshots/02-cli-run.png` | Pinned CLI `--from_bundle` run on the malicious bundle completing with exit 0 |
-| Screenshot 3 | `screenshots/03-outside-dst.png` | `/out/canary/lycoris_e2.pt` existing outside `--dst_dir` |
-| Screenshot 4 | `screenshots/04-negative-control.png` | Negative control: benign bundle writes only inside its `--dst_dir`, `/out` stays empty |
+## 
