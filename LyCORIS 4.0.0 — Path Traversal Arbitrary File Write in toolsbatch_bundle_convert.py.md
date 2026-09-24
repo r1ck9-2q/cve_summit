@@ -223,10 +223,4 @@ or `..`.
 - Upstream report: [pending publication]
 - Vendor advisory: [none]
 
-## Disclaimer
-This report is provided for defensive and coordination purposes. It contains no
-ready-to-run exploit beyond the minimum reproduction information, and no sensitive
-infrastructure details. Do not disclose it publicly before the maintainer has had a
-reasonable window to fix the issue.
 
-## 
