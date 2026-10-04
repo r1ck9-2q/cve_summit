@@ -8,8 +8,7 @@
 | Component | `src/isomedia/movie_fragments.c` — `gf_isom_fragment_add_sample_ex()` |
 | Vulnerability type | CWE-416: Use After Free |
 | Discovered | 2026-10-02 (fuzzer crash timestamp) |
-| Reported at | [pending：提交后回填 issue URL] |
-| Fix commit | `[unfixed]` |
+
 
 ## Summary
 
