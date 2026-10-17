@@ -72,14 +72,12 @@ poc_bt_undef_uaf.bt (binary/xml sample attached, SHA256 in SHA256SUMS.txt)
 - Availability: High (process crash)
 - Scope: memory corruption limited to the MP4Box process.
 
-
 ## Remediation
 Remove each entry from undef_nodes (gf_list_del_item) before or after unregistering, and iterate over a stable copy of the list; the cleanup should also use the proper parent when unregistering.
-
 
 ## References
 - Source repository: https://github.com/gpac/gpac
 - Upstream report: [pending publication]
 - CWE: CWE-415
 - Vendor advisory: [none]
-
+- Related upstream issues: https://github.com/gpac/gpac/issues/3642 and https://github.com/gpac/gpac/issues/3803 (this defect is an incomplete fix of that fix round: the undef_nodes list was not covered)
